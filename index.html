@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #f3f3f3;
+            width: 100%;
+            position: fixed;
+        }
+        header {
+            top: 0;
+            left: 0;
+        }
+        footer {
+            bottom: 0;
+            left: 0;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .links {
+            padding: 1em
+        }
+        .link {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mortimer Software</h1>
+        <p>You have found my personal page, welcome!</p>
+    </header>
+    
+    <div class="links">
+        <section>
+            <h2>About Me</h2>
+            <p>I am a passionate software developer, manager, and father with a keen interest in building mobile applications.</p>
+        </section>
+        
+        <section>
+            <h2>Links</h2>
+            <div class="link">
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/jamesonmortimer">https://www.linkedin.com/in/jamesonmortimer</a></p>
+            </div>
+            <div class="link">
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/jamesonmortimer">https://github.com/jamesonmortimer</a></p>
+            </div>
+            <div class="link">
+                <h3>AppStore</h3>
+                <p>JBox coming soon...</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:jameson@mortimersoftware.com">jameson@mortimersoftware.com</a></p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 | Jameson Mortimer</p>
+    </footer>
+
+    <script>
+        // JavaScript to dynamically adjust the body padding
+        document.addEventListener("DOMContentLoaded", function() {
+            var headerHeight = document.querySelector('header').offsetHeight;
+            document.querySelector('.links').style.paddingTop = headerHeight + 'px';
+        });
+    </script>
+</body>
+</html>
