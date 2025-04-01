@@ -105,6 +105,8 @@ section {
 
 .link-content {
     flex: 1;
+    min-width: 0; /* Allows content to shrink below flex item's minimum content size */
+    overflow: hidden;
 }
 
 .link h3 {
@@ -115,6 +117,9 @@ section {
 
 .link p {
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Icons */
@@ -123,6 +128,7 @@ section {
     margin-right: 1em;
     width: 24px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 /* Brand Colors */
@@ -136,6 +142,10 @@ a {
     color: var(--text-color);
     text-decoration: none;
     transition: color var(--transition);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .link:hover a {
@@ -157,5 +167,32 @@ a {
     
     section {
         padding: 1em;
+    }
+
+    .link {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .link i {
+        margin-top: 0.2em;
+    }
+
+    .link p {
+        font-size: 0.85em;
+    }
+
+    .link h3 {
+        font-size: 1em;
+    }
+
+    .link-content {
+        min-width: 0; /* Allows content to shrink below flex item's minimum content size */
+    }
+}
+
+@media (max-width: 400px) {
+    .link p {
+        font-size: 0.75em;
     }
 } 
