@@ -8,169 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        /* Variables */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #3498db;
-            --text-color: #2c3e50;
-            --header-footer-bg: #ffffff;
-            --shadow: 0 2px 4px rgba(0,0,0,0.1);
-            --border-radius: 8px;
-            --transition: 0.3s ease;
-        }
-
-        /* Base Styles */
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Layout */
-        .links {
-            padding: 2em;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-bottom: 100px;
-        }
-
-        /* Header & Footer */
-        header, footer {
-            text-align: center;
-            padding: 1.5em;
-            background-color: var(--header-footer-bg);
-            width: 100%;
-            position: fixed;
-            box-shadow: var(--shadow);
-            box-sizing: border-box;
-        }
-
-        header {
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        footer {
-            bottom: 0;
-            left: 0;
-            font-size: 0.9em;
-            color: #666;
-            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Typography */
-        header h1 {
-            margin: 0;
-            color: var(--primary-color);
-            font-size: 2.2em;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        header p {
-            margin: 0.5em 0 0;
-            color: var(--secondary-color);
-            font-size: 1.1em;
-        }
-
-        section h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5em;
-        }
-
-        /* Sections */
-        section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--border-radius);
-            padding: 1.5em;
-            margin-bottom: 2em;
-            box-shadow: var(--shadow);
-        }
-
-        /* Links */
-        .link {
-            margin-bottom: 1.5em;
-            display: flex;
-            align-items: center;
-            padding: 0.5em;
-            border-radius: 4px;
-            transition: background-color var(--transition);
-        }
-
-        .link:hover {
-            background-color: rgba(240, 247, 255, 0.8);
-        }
-
-        .link-content {
-            flex: 1;
-        }
-
-        .link h3 {
-            color: var(--secondary-color);
-            margin: 0 0 0.5em;
-            font-size: 1.2em;
-        }
-
-        .link p {
-            margin: 0;
-        }
-
-        /* Icons */
-        .link i {
-            font-size: 1.5em;
-            margin-right: 1em;
-            width: 24px;
-            text-align: center;
-        }
-
-        /* Brand Colors */
-        .fa-linkedin { color: #0072b1; }
-        .fa-github { color: #333333; }
-        .fa-app-store-ios { color: #007AFF; }
-        .fa-twitch { color: #9146FF; }
-
-        /* Links */
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-
-        .link:hover a {
-            color: var(--secondary-color);
-        }
-
-        /* Utilities */
-        .coming-soon {
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .links {
-                padding: 1em;
-                padding-bottom: 80px;
-            }
-            
-            section {
-                padding: 1em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -184,14 +22,14 @@
                 <i class="fab fa-linkedin"></i>
                 <div class="link-content">
                     <h3>LinkedIn</h3>
-                    <p><a href="https://www.linkedin.com/in/jamesonmortimer">https://www.linkedin.com/in/jamesonmortimer</a></p>
+                    <p><a href="https://www.linkedin.com/in/jamesonmortimer" target="_blank">https://www.linkedin.com/in/jamesonmortimer</a></p>
                 </div>
             </div>
             <div class="link">
                 <i class="fab fa-github"></i>
                 <div class="link-content">
                     <h3>GitHub</h3>
-                    <p><a href="https://github.com/jamesonmortimer">https://github.com/jamesonmortimer</a></p>
+                    <p><a href="https://github.com/jamesonmortimer" target="_blank">https://github.com/jamesonmortimer</a></p>
                 </div>
             </div>
             <div class="link">
@@ -205,7 +43,7 @@
                 <i class="fab fa-twitch"></i>
                 <div class="link-content">
                     <h3>Twitch</h3>
-                    <p><a href="https://www.twitch.tv/mortimersoftware">https://www.twitch.tv/mortimersoftware</a></p>
+                    <p><a href="https://www.twitch.tv/mortimersoftware" target="_blank">https://www.twitch.tv/mortimersoftware</a></p>
                 </div>
             </div>
         </section>
@@ -219,6 +57,13 @@
                     <p><a href="mailto:jameson@mortimersoftware.com">jameson@mortimersoftware.com</a></p>
                 </div>
             </div>
+            <div class="link">
+                <i class="fas fa-file-alt"></i>
+                <div class="link-content">
+                    <h3>Resume</h3>
+                    <p><a href="https://drive.google.com/file/d/1Z-QeDpl1MjYLEJN9vUjjjN3EfxyTBK4f/view?usp=sharing" target="_blank">Download resume</a></p>
+                </div>
+            </div>
         </section>
     </div>
     
@@ -226,11 +71,6 @@
         <p>&copy; 2025 | Jameson Mortimer</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const headerHeight = document.querySelector('header').offsetHeight;
-            document.querySelector('.links').style.paddingTop = `${headerHeight + 40}px`;
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
