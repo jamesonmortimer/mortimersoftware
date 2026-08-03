@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JBox Games — Privacy Policy / Politique de confidentialité</title>
+<meta name="description" content="Privacy policy for the JBox Games mobile app. JBox operates no servers and collects no personal information.">
+<!--
+  Hosted at https://mortimersoftware.com/jbox/privacy/
+  Source of truth: jbox repo, docs/legal/privacy-policy.html (template form,
+  with placeholders). If you edit the policy, edit BOTH — this file is the one
+  the App Store and Play Console URLs actually point at.
+
+  Referenced by:
+    - Play Console: Privacy policy URL -> this page
+    - App Store Connect: en-US -> this page; fr-CA -> this page + "#fr"
+      (the page auto-selects French from that fragment)
+
+  Self-contained on purpose: no external CSS, fonts, scripts, or images, so it
+  renders on any static host and cannot be broken by a CDN outage. With
+  JavaScript disabled both languages render stacked, English first — a legal
+  document must never depend on JS.
+
+  Good-faith draft written from an audit of what the app actually does; not
+  legal advice. Quebec Law 25 has obligations beyond a policy page (designated
+  privacy officer, breach reporting, documented response process).
+-->
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5c5c5c;
+    --rule: #e2e2e2;
+    --accent: #0a2e24;
+    --card: #f6f7f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #e8e8e8;
+      --muted: #a0a4aa;
+      --rule: #2c3038;
+      --accent: #b9d6c9;
+      --card: #1c1f25;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2rem 1.25rem 5rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  h2 {
+    font-size: 1.15rem; margin: 2.5rem 0 .75rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--rule); letter-spacing: -.005em;
+  }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+  p, li { margin: 0 0 .85rem; }
+  ul { padding-left: 1.35rem; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .updated { color: var(--muted); font-size: .9rem; margin-bottom: 2rem; }
+  .lede {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 1.1rem 1.25rem; margin: 0 0 1.5rem;
+  }
+  .lede p:last-child, .callout p:last-child { margin-bottom: 0; }
+  .callout {
+    border-left: 3px solid var(--accent); padding: .1rem 0 .1rem 1rem;
+    margin: 1.25rem 0; color: var(--muted);
+  }
+  table { border-collapse: collapse; width: 100%; margin: 0 0 1rem; font-size: .95rem; }
+  th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  /* Language switch */
+  nav.langs { display: flex; gap: .5rem; margin: 0 0 2rem; flex-wrap: wrap; }
+  nav.langs a {
+    font-size: .85rem; text-decoration: none; color: var(--muted);
+    border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .85rem;
+  }
+  nav.langs a[aria-current="true"] {
+    color: var(--bg); background: var(--fg); border-color: var(--fg); font-weight: 600;
+  }
+  /* No JS: both languages visible, stacked. JS narrows to one. */
+  html.js .lang { display: none; }
+  /* The section ids deliberately do NOT match the "#en"/"#fr" fragments: the
+     fragment is a language flag, not a jump target. If it matched an element,
+     the browser would scroll that section to the top and hide the switcher. */
+  html.js.show-en #doc-en, html.js.show-fr #doc-fr { display: block; }
+  html:not(.js) nav.langs { display: none; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--rule);
+           color: var(--muted); font-size: .875rem; }
+</style>
+</head>
+<body>
+<main>
+
+<nav class="langs" aria-label="Language">
+  <a href="#en" id="pick-en" hreflang="en">English</a>
+  <a href="#fr" id="pick-fr" hreflang="fr-CA">Français (Canada)</a>
+</nav>
+
+<!-- ===================== ENGLISH ===================== -->
+<section class="lang" id="doc-en" lang="en">
+
+  <h1>JBox Games — Privacy Policy</h1>
+  <p class="updated">Effective 2 August 2026</p>
+
+  <div class="lede">
+    <p><strong>The short version.</strong> JBox Games is a collection of classic
+    card, board, dice and arcade games. There is no JBox account, and we operate
+    no servers. We do not collect, receive, sell, or share your personal
+    information. Your settings and game progress stay on your device.</p>
+    <p>The app shows <strong>non-personalized ads only</strong>, and it never
+    accesses your device's advertising identifier. That is a permanent design
+    decision, enforced by automated tests on every build — not a setting.</p>
+  </div>
+
+  <p>This policy explains what the JBox Games mobile app does and does not do
+  with information, on both iOS and Android. It covers the app only, not any
+  website.</p>
+
+  <h2>1. Who we are</h2>
+  <p>JBox Games is published by Jameson Mortimer
+  ("we", "us"). You can reach us about privacy at
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>.</p>
+
+  <h2>2. What we do not do</h2>
+  <p>Stated plainly, because most of a privacy policy's value is in what it
+  rules out:</p>
+  <ul>
+    <li>We do <strong>not</strong> ask you to create an account, and we never
+      collect your name, email address, phone number, or date of birth.</li>
+    <li>We operate <strong>no servers or backend of any kind</strong>. The app
+      contains no code that sends data to us.</li>
+    <li>We use <strong>no analytics and no crash-reporting service</strong> —
+      there is no Firebase, Google Analytics, Crashlytics, Sentry, or
+      equivalent in the app.</li>
+    <li>We do <strong>not</strong> access your device's advertising identifier
+      (IDFA on iOS, Advertising ID on Android). On iOS the app ships without the
+      tracking-permission prompt because it has nothing to ask for; on Android
+      the app actively removes the advertising-ID permission that the ads
+      library would otherwise add.</li>
+    <li>We do <strong>not</strong> request access to your location, camera,
+      microphone, photos, contacts, or files. The app declares no such
+      permissions.</li>
+    <li>We do <strong>not</strong> read any device or hardware identifier.</li>
+    <li>We do <strong>not</strong> sell or share personal information, and we
+      never have. We do not engage in targeted advertising or profiling.</li>
+  </ul>
+
+  <h2>3. What is stored on your device</h2>
+  <p>This information is saved locally, in your device's standard app-preferences
+  storage. It is not transmitted to us, because there is nowhere for it to go.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Game settings and cosmetic choices — difficulty, card backs, board
+      and table themes, dice and domino styles, sound and haptics, appearance
+      (light/dark), reduce-motion</td><td>So the app looks and behaves the way
+      you left it</td></tr>
+    <tr><td>Your language preference</td><td>To show the app in English or
+      French</td></tr>
+    <tr><td>Lifetime win counts per game, and small numeric game-progress
+      values such as best scores or saved position</td><td>To show your progress
+      and to submit scores when you are signed in to Game Center or Play
+      Games</td></tr>
+    <tr><td>Whether you purchased "Remove Ads"</td><td>So ads stay off</td></tr>
+    <tr><td>Whether you have completed the intro screens</td><td>So you only see
+      them once</td></tr>
+    <tr><td>A graphics pipeline cache file</td><td>A technical rendering cache
+      that makes games start faster. Contains no information about you</td></tr>
+  </table>
+  </div>
+
+  <h3>Game Center profile cache (iOS only)</h3>
+  <p>If you are signed in to Game Center, the iOS app saves a copy of your
+  Game Center <strong>display name and profile photo</strong> on your device, so
+  it can show them on the profile screen without fetching them again. This copy
+  stays on your device and is never sent to us. It comes from Apple, not from
+  you, and it disappears when you delete the app. The Android app reads your
+  Play Games display name only while the app is running and never saves it.</p>
+
+  <h3>Deleting this data</h3>
+  <p><strong>Uninstalling the app deletes all of it.</strong> There is nothing
+  stored elsewhere for us to delete, because we never received it. To clear
+  leaderboard scores or achievements, see section 5 — those live with Apple or
+  Google, not with us.</p>
+
+  <h3>Device backups</h3>
+  <p>Your device's own backup system may include the locally stored items above:
+  iCloud or Finder backups on iOS, and Android Auto Backup to your Google Drive,
+  which also carries data across a device-to-device transfer. Those backups are
+  made and controlled by Apple or Google under your device settings and their
+  privacy policies. We have no access to them.</p>
+
+  <h2>4. Advertising</h2>
+  <p>Unless you purchase "Remove Ads", the app displays a single banner
+  advertisement from <strong>Google AdMob</strong> on the game-selection screen.
+  There are no ads during play, and no video, interstitial, or rewarded ads
+  anywhere.</p>
+
+  <p><strong>Every ad request is marked non-personalized.</strong> Ads are
+  selected from general context, not from any profile of you. The app sends no
+  keywords, no content URL, and no advertising identifier with an ad request.</p>
+
+  <p>To fill and measure an ad, and to detect fraud, Google necessarily receives
+  technical information — including your <strong>IP address</strong> (which
+  indicates approximate, city-level location), and general device and ad-request
+  details such as device type, operating system version, screen size, and
+  language. Google processes this as an independent controller under the
+  <a href="https://business.safety.google/privacy/" rel="noopener noreferrer">Google
+  Advertising Privacy Policy</a>. We receive none of it: we get no reports about
+  you, and no ability to identify you.</p>
+
+  <h3>Install measurement on iOS (SKAdNetwork)</h3>
+  <p>On iOS the app supports Apple's <strong>SKAdNetwork</strong>, an
+  install-measurement system built into iOS. It lets an advertiser learn that an
+  ad led to an app install <em>in aggregate</em>, without identifying you and
+  without the advertising identifier — Apple sits in the middle and limits what
+  can be learned. This is Apple's mechanism, operating at the system level. The
+  Android build does not include the equivalent attribution features; they are
+  deliberately removed.</p>
+
+  <h3>Turning ads off</h3>
+  <p>Purchasing "Remove Ads" (a one-time purchase) stops the app from requesting
+  ads at all.</p>
+
+  <h2>5. Game Center and Play Games Services</h2>
+  <p>Leaderboards and achievements are provided entirely by the platform —
+  <strong>Apple Game Center</strong> on iOS and <strong>Google Play Games
+  Services</strong> on Android. We run no leaderboard service ourselves.</p>
+  <p>When you are signed in and finish a game, the app sends the platform a
+  leaderboard identifier and a single number (your score, or your lifetime win
+  count), plus achievement progress. That is the whole payload. It carries no
+  other information about you or your device.</p>
+  <p>Whether you are signed in, and what your gaming profile shows, is controlled
+  by your Apple or Google account settings — not by us. Apple and Google handle
+  that data under their own policies:
+  <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple
+  Privacy Policy</a> ·
+  <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google
+  Privacy Policy</a>. To remove leaderboard or achievement data, use Game Center
+  or Play Games directly, or contact Apple or Google.</p>
+  <p>We never receive your email address from either service.</p>
+
+  <h2>6. Purchases</h2>
+  <p>The "Remove Ads" purchase is processed entirely by Apple's App Store or
+  Google Play. <strong>We never see your payment details</strong> — no card
+  number, no billing address, no name. The app only records, on your device,
+  whether the purchase is active.</p>
+
+  <h2>7. Diagnostics</h2>
+  <p>The app writes technical messages to the operating system's local log while
+  running — screen sizes, frame timings, and error descriptions. These stay on
+  your device and are not collected by us.</p>
+  <p>Separately, if <em>you</em> have enabled sharing crash and diagnostic data
+  in your iOS or Android settings, Apple or Google may send us aggregated crash
+  reports through App Store Connect or the Play Console. Those reports contain
+  technical fault information such as stack traces, not your personal
+  information, and they are governed by your device settings.</p>
+
+  <h2>8. Children</h2>
+  <p>JBox Games is rated for players aged 13 and older and is not directed to
+  children under 13. We do not knowingly collect personal information from
+  children — in fact we do not knowingly collect personal information from
+  anyone. The app asks for no birth date and contains no age gate; the store
+  age rating performs that role. If you believe a child has provided personal
+  information through the app, please contact us, though as described above
+  there is nothing for us to hold.</p>
+
+  <h2>9. Your rights</h2>
+  <p>Depending on where you live — including under Quebec's Law 25, Canada's
+  PIPEDA, and comparable United States state laws — you have rights to access,
+  correct, and delete your personal information, to withdraw consent, and to
+  not be discriminated against for exercising them.</p>
+  <p>These rights are unusually simple to satisfy here: <strong>we hold no
+  personal information about you</strong>. Everything the app stores is on your
+  device and under your control, and deleting the app erases it. For anything
+  held by Apple, Google, or AdMob, please use their tools linked above, since
+  they hold that data and we cannot reach it. If you would like written
+  confirmation that we hold nothing about you, email us and we will provide it.</p>
+
+  <h2>10. International transfers</h2>
+  <p>The app is offered in Canada and the United States. Because we hold no
+  personal information, we transfer none. Any processing by Apple or Google may
+  occur on their infrastructure outside your province or country, under their
+  own policies and safeguards.</p>
+
+  <h2>11. Person responsible for privacy</h2>
+  <p>As required by Quebec's Law 25, the person responsible for the protection
+  of personal information for JBox Games is
+  Jameson Mortimer, Owner, reachable at
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>.</p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>If this policy changes, we will update the effective date at the top of the
+  page, and for any significant change we will say so in the app's release
+  notes. If a future version of the app ever collects personal information —
+  which would be a deliberate reversal of the design described here — we will
+  update this policy before that version ships.</p>
+
+  <h2>13. Contact</h2>
+  <p>Questions or complaints about privacy:
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>. If you are in Canada and are
+  not satisfied with our response, you may complain to the
+  <a href="https://www.priv.gc.ca/" rel="noopener noreferrer">Office of the
+  Privacy Commissioner of Canada</a>, or, in Quebec, to the
+  <a href="https://www.cai.gouv.qc.ca/" rel="noopener noreferrer">Commission
+  d'accès à l'information du Québec</a>.</p>
+
+</section>
+
+<!-- ===================== FRANÇAIS (CANADA) ===================== -->
+<section class="lang" id="doc-fr" lang="fr-CA">
+
+  <h1>Jeux JBox — Politique de confidentialité</h1>
+  <p class="updated">En vigueur le 2 août 2026</p>
+
+  <div class="lede">
+    <p><strong>En bref.</strong> Jeux JBox est une collection de jeux classiques
+    de cartes, de société, de dés et d'arcade. Il n'existe aucun compte JBox et
+    nous n'exploitons aucun serveur. Nous ne recueillons, ne recevons, ne vendons
+    ni ne communiquons aucun renseignement personnel vous concernant. Vos
+    réglages et votre progression demeurent sur votre appareil.</p>
+    <p>L'application affiche uniquement des <strong>publicités non
+    personnalisées</strong> et n'accède jamais à l'identifiant publicitaire de
+    votre appareil. Il s'agit d'un choix de conception permanent, vérifié
+    automatiquement à chaque version — et non d'un réglage.</p>
+  </div>
+
+  <p>La présente politique explique ce que l'application mobile Jeux JBox fait —
+  et ne fait pas — avec les renseignements, sur iOS comme sur Android. Elle porte
+  sur l'application seulement, et non sur un site Web.</p>
+
+  <h2>1. Qui nous sommes</h2>
+  <p>Jeux JBox est publié par Jameson Mortimer
+  (« nous »). Pour toute question de confidentialité, écrivez-nous à
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>.</p>
+
+  <h2>2. Ce que nous ne faisons pas</h2>
+  <p>Énoncé clairement, car l'essentiel de la valeur d'une politique de
+  confidentialité réside dans ce qu'elle exclut :</p>
+  <ul>
+    <li>Nous ne vous demandons <strong>pas</strong> de créer un compte et nous ne
+      recueillons jamais votre nom, votre adresse courriel, votre numéro de
+      téléphone ni votre date de naissance.</li>
+    <li>Nous n'exploitons <strong>aucun serveur ni aucune infrastructure
+      dorsale</strong>. L'application ne contient aucun code qui nous transmet
+      des données.</li>
+    <li>Nous n'utilisons <strong>aucun outil d'analyse ni aucun service de
+      rapport de plantage</strong> — l'application ne contient ni Firebase, ni
+      Google Analytics, ni Crashlytics, ni Sentry, ni équivalent.</li>
+    <li>Nous n'accédons <strong>pas</strong> à l'identifiant publicitaire de
+      votre appareil (IDFA sur iOS, identifiant publicitaire sur Android). Sur
+      iOS, l'application ne présente aucune demande d'autorisation de suivi,
+      n'ayant rien à demander; sur Android, elle retire activement
+      l'autorisation d'identifiant publicitaire que la bibliothèque publicitaire
+      ajouterait autrement.</li>
+    <li>Nous ne demandons <strong>pas</strong> l'accès à votre position, à votre
+      appareil photo, à votre micro, à vos photos, à vos contacts ni à vos
+      fichiers. L'application ne déclare aucune de ces autorisations.</li>
+    <li>Nous ne lisons <strong>aucun</strong> identifiant d'appareil ou de
+      matériel.</li>
+    <li>Nous ne vendons ni ne communiquons aucun renseignement personnel, et ne
+      l'avons jamais fait. Nous ne faisons ni publicité ciblée ni profilage.</li>
+  </ul>
+
+  <h2>3. Ce qui est conservé sur votre appareil</h2>
+  <p>Ces renseignements sont enregistrés localement, dans l'espace de préférences
+  standard des applications de votre appareil. Ils ne nous sont pas transmis,
+  faute de destination.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>Quoi</th><th>Pourquoi</th></tr>
+    <tr><td>Réglages de jeu et choix esthétiques — difficulté, dos de cartes,
+      thèmes de plateau et de table, styles de dés et de dominos, sons et
+      vibrations, apparence (clair/sombre), réduction des animations</td>
+      <td>Pour que l'application demeure telle que vous l'avez laissée</td></tr>
+    <tr><td>Votre préférence de langue</td><td>Pour afficher l'application en
+      français ou en anglais</td></tr>
+    <tr><td>Nombre de parties gagnées par jeu, et petites valeurs numériques de
+      progression comme les meilleurs résultats ou la position sauvegardée</td>
+      <td>Pour afficher votre progression et transmettre vos résultats lorsque
+      vous êtes connecté à Game Center ou à Play Jeux</td></tr>
+    <tr><td>L'achat « Retirer les publicités », le cas échéant</td><td>Pour que
+      les publicités demeurent désactivées</td></tr>
+    <tr><td>L'achèvement des écrans d'introduction</td><td>Pour ne vous les
+      présenter qu'une seule fois</td></tr>
+    <tr><td>Un fichier de cache graphique</td><td>Un cache technique de rendu qui
+      accélère le démarrage des jeux. Il ne contient aucun renseignement vous
+      concernant</td></tr>
+  </table>
+  </div>
+
+  <h3>Copie du profil Game Center (iOS seulement)</h3>
+  <p>Si vous êtes connecté à Game Center, l'application iOS conserve sur votre
+  appareil une copie de votre <strong>nom d'affichage et de votre photo de
+  profil</strong> Game Center, afin de les afficher à l'écran de profil sans
+  devoir les récupérer de nouveau. Cette copie demeure sur votre appareil et ne
+  nous est jamais transmise. Elle provient d'Apple et non de vous, et elle
+  disparaît lorsque vous supprimez l'application. L'application Android lit
+  votre nom d'affichage Play Jeux uniquement pendant l'exécution et ne
+  l'enregistre jamais.</p>
+
+  <h3>Suppression de ces données</h3>
+  <p><strong>La désinstallation de l'application supprime le tout.</strong> Il
+  n'existe rien ailleurs que nous puissions supprimer, puisque nous ne l'avons
+  jamais reçu. Pour effacer des résultats de classement ou des succès, voyez la
+  section 5 : ces données appartiennent à Apple ou à Google, et non à nous.</p>
+
+  <h3>Sauvegardes de l'appareil</h3>
+  <p>Le système de sauvegarde de votre appareil peut inclure les éléments locaux
+  ci-dessus : sauvegardes iCloud ou Finder sur iOS, et sauvegarde automatique
+  Android vers votre Google Drive, qui sert aussi au transfert d'un appareil à
+  l'autre. Ces sauvegardes sont réalisées et contrôlées par Apple ou Google selon
+  les réglages de votre appareil et leurs politiques de confidentialité. Nous n'y
+  avons aucun accès.</p>
+
+  <h2>4. Publicité</h2>
+  <p>À moins que vous n'achetiez « Retirer les publicités », l'application
+  affiche une seule bannière publicitaire de <strong>Google AdMob</strong> à
+  l'écran de sélection des jeux. Aucune publicité n'apparaît pendant une partie,
+  et il n'y a nulle part de publicité vidéo, interstitielle ou récompensée.</p>
+
+  <p><strong>Chaque demande publicitaire est marquée comme non
+  personnalisée.</strong> Les publicités sont choisies selon le contexte général
+  et non selon un profil vous concernant. L'application ne transmet aucun
+  mot-clé, aucune adresse de contenu et aucun identifiant publicitaire avec une
+  demande.</p>
+
+  <p>Pour diffuser et mesurer une publicité, et pour détecter la fraude, Google
+  reçoit nécessairement des renseignements techniques, dont votre
+  <strong>adresse IP</strong> (qui indique une localisation approximative, à
+  l'échelle de la ville) ainsi que des données générales sur l'appareil et la
+  demande : type d'appareil, version du système d'exploitation, taille d'écran et
+  langue. Google traite ces renseignements à titre de responsable indépendant,
+  selon la
+  <a href="https://business.safety.google/privacy/" rel="noopener noreferrer">politique
+  de confidentialité publicitaire de Google</a>. Nous n'en recevons rien : aucun
+  rapport vous concernant, aucune possibilité de vous identifier.</p>
+
+  <h3>Mesure des installations sur iOS (SKAdNetwork)</h3>
+  <p>Sur iOS, l'application prend en charge <strong>SKAdNetwork</strong>, le
+  système de mesure des installations intégré à iOS. Il permet à un annonceur
+  d'apprendre <em>de façon agrégée</em> qu'une publicité a mené à une
+  installation, sans vous identifier et sans identifiant publicitaire — Apple
+  s'interpose et limite ce qui peut en être déduit. Il s'agit du mécanisme
+  d'Apple, qui fonctionne au niveau du système. La version Android n'inclut pas
+  les fonctions d'attribution équivalentes : elles en sont délibérément
+  retirées.</p>
+
+  <h3>Désactiver les publicités</h3>
+  <p>L'achat unique « Retirer les publicités » fait en sorte que l'application ne
+  demande plus aucune publicité.</p>
+
+  <h2>5. Game Center et Play Jeux</h2>
+  <p>Les classements et les succès sont entièrement fournis par la plateforme :
+  <strong>Apple Game Center</strong> sur iOS et <strong>Google Play Jeux</strong>
+  sur Android. Nous n'exploitons aucun service de classement.</p>
+  <p>Lorsque vous êtes connecté et terminez une partie, l'application transmet à
+  la plateforme un identifiant de classement et un seul nombre (votre résultat ou
+  votre total de parties gagnées), ainsi que la progression des succès. C'est
+  l'intégralité du contenu transmis. Il ne comporte aucun autre renseignement sur
+  vous ou votre appareil.</p>
+  <p>Votre état de connexion et le contenu de votre profil de joueur sont
+  déterminés par les réglages de votre compte Apple ou Google, et non par nous.
+  Apple et Google traitent ces données selon leurs propres politiques :
+  <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">politique
+  de confidentialité d'Apple</a> ·
+  <a href="https://policies.google.com/privacy" rel="noopener noreferrer">politique
+  de confidentialité de Google</a>. Pour supprimer des données de classement ou
+  de succès, utilisez directement Game Center ou Play Jeux, ou communiquez avec
+  Apple ou Google.</p>
+  <p>Nous ne recevons jamais votre adresse courriel de l'un ou l'autre de ces
+  services.</p>
+
+  <h2>6. Achats</h2>
+  <p>L'achat « Retirer les publicités » est traité entièrement par l'App Store
+  d'Apple ou par Google Play. <strong>Nous ne voyons jamais vos renseignements de
+  paiement</strong> : ni numéro de carte, ni adresse de facturation, ni nom.
+  L'application n'enregistre, sur votre appareil, que le fait que l'achat est
+  actif.</p>
+
+  <h2>7. Diagnostics</h2>
+  <p>Pendant son exécution, l'application inscrit des messages techniques dans le
+  journal local du système d'exploitation — dimensions d'écran, temps de rendu et
+  descriptions d'erreurs. Ces messages demeurent sur votre appareil et ne sont pas
+  recueillis par nous.</p>
+  <p>Par ailleurs, si <em>vous</em> avez activé le partage des données de
+  plantage et de diagnostic dans vos réglages iOS ou Android, Apple ou Google
+  peut nous transmettre des rapports de plantage agrégés via App Store Connect ou
+  la Play Console. Ces rapports contiennent des renseignements techniques sur la
+  défaillance, comme des traces d'exécution, et non vos renseignements
+  personnels; ils sont régis par les réglages de votre appareil.</p>
+
+  <h2>8. Enfants</h2>
+  <p>Jeux JBox est classé pour les joueurs de 13 ans et plus et ne s'adresse pas
+  aux enfants de moins de 13 ans. Nous ne recueillons pas sciemment de
+  renseignements personnels auprès d'enfants — en réalité, nous ne recueillons
+  sciemment de renseignements personnels auprès de personne. L'application ne
+  demande aucune date de naissance et ne comporte aucune barrière d'âge; la
+  classification de la boutique remplit ce rôle. Si vous croyez qu'un enfant a
+  fourni des renseignements personnels par l'intermédiaire de l'application,
+  écrivez-nous, même si, comme indiqué ci-dessus, nous ne détenons rien.</p>
+
+  <h2>9. Vos droits</h2>
+  <p>Selon votre lieu de résidence — notamment en vertu de la Loi 25 du Québec,
+  de la LPRPDE au Canada et de lois comparables d'États américains — vous avez le
+  droit d'accéder à vos renseignements personnels, de les faire rectifier et
+  supprimer, de retirer votre consentement, et de ne subir aucune discrimination
+  pour avoir exercé ces droits.</p>
+  <p>Ces droits sont ici particulièrement simples à respecter : <strong>nous ne
+  détenons aucun renseignement personnel vous concernant</strong>. Tout ce que
+  l'application enregistre se trouve sur votre appareil, sous votre contrôle, et
+  la suppression de l'application l'efface. Pour tout élément détenu par Apple,
+  Google ou AdMob, veuillez utiliser leurs outils mentionnés plus haut, puisque
+  ce sont eux qui détiennent ces données et que nous ne pouvons y accéder. Si
+  vous souhaitez une confirmation écrite que nous ne détenons rien à votre sujet,
+  écrivez-nous et nous vous la fournirons.</p>
+
+  <h2>10. Transferts hors du Québec et du Canada</h2>
+  <p>L'application est offerte au Canada et aux États-Unis. Comme nous ne
+  détenons aucun renseignement personnel, nous n'en transférons aucun. Tout
+  traitement effectué par Apple ou Google peut avoir lieu sur leurs
+  infrastructures à l'extérieur de votre province ou de votre pays, selon leurs
+  propres politiques et mesures de protection.</p>
+
+  <h2>11. Personne responsable de la protection des renseignements personnels</h2>
+  <p>Conformément à la Loi 25 du Québec, la personne responsable de la protection
+  des renseignements personnels pour Jeux JBox est
+  Jameson Mortimer, propriétaire, que vous pouvez joindre à
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>.</p>
+
+  <h2>12. Modifications de la politique</h2>
+  <p>Si la présente politique change, nous mettrons à jour la date d'entrée en
+  vigueur au haut de la page et, pour toute modification importante, nous le
+  mentionnerons dans les notes de version de l'application. Si une future version
+  de l'application devait recueillir des renseignements personnels — ce qui
+  constituerait un renversement délibéré de la conception décrite ici — nous
+  mettrions la politique à jour avant sa publication.</p>
+
+  <h2>13. Nous joindre</h2>
+  <p>Questions ou plaintes concernant la confidentialité :
+  <a href="mailto:privacy@mortimersoftware.com">privacy@mortimersoftware.com</a>. Si vous êtes au Canada et que
+  notre réponse ne vous satisfait pas, vous pouvez porter plainte auprès du
+  <a href="https://www.priv.gc.ca/fr/" rel="noopener noreferrer">Commissariat à
+  la protection de la vie privée du Canada</a> ou, au Québec, auprès de la
+  <a href="https://www.cai.gouv.qc.ca/" rel="noopener noreferrer">Commission
+  d'accès à l'information du Québec</a>.</p>
+
+</section>
+
+<footer>
+  <p>JBox Games · Jameson Mortimer</p>
+</footer>
+
+</main>
+
+<script>
+// Progressive enhancement only: with JS off, both languages render stacked and
+// the page remains complete and readable. Never gate legal text behind script.
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  function apply(lang, push) {
+    root.classList.toggle('show-fr', lang === 'fr');
+    root.classList.toggle('show-en', lang !== 'fr');
+    root.setAttribute('lang', lang === 'fr' ? 'fr-CA' : 'en');
+    document.getElementById('pick-en').setAttribute('aria-current', String(lang !== 'fr'));
+    document.getElementById('pick-fr').setAttribute('aria-current', String(lang === 'fr'));
+    if (push && window.history && history.replaceState) {
+      history.replaceState(null, '', '#' + lang);
+    }
+  }
+
+  // Precedence: explicit #fr / #en fragment, then the browser's language.
+  function initial() {
+    var h = (location.hash || '').replace('#', '').toLowerCase();
+    if (h === 'fr' || h === 'en') return h;
+    var nav = (navigator.language || '').toLowerCase();
+    return nav.indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+
+  apply(initial(), false);
+
+  document.getElementById('pick-en').addEventListener('click', function (e) {
+    e.preventDefault(); apply('en', true);
+  });
+  document.getElementById('pick-fr').addEventListener('click', function (e) {
+    e.preventDefault(); apply('fr', true);
+  });
+  window.addEventListener('hashchange', function () { apply(initial(), false); });
+})();
+</script>
+</body>
+</html>
