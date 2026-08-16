@@ -1,0 +1,29 @@
+# app-ads.txt — IAB Tech Lab "Authorized Sellers for Apps"
+# Spec: https://iabtechlab.com/ads-txt/
+#
+# Declares which ad systems are authorised to sell ad inventory on behalf of
+# MortimerSoftware apps. Publishers who skip this file are easier to spoof:
+# a fraudster can claim to be selling your inventory and buyers have no way to
+# check. Many programmatic buyers now bid only on verified inventory, so this
+# file affects fill rate as well as fraud.
+#
+# HOW IT IS FOUND: AdMob does not read a path from the store listing. It takes
+# the *hostname* of the developer website URL on each App Store / Play listing
+# and fetches https://<hostname>/app-ads.txt. That means:
+#   - this file must stay at the ROOT of mortimersoftware.com, not under /jbox/
+#   - the developer website field on BOTH store listings must point at this
+#     domain, or the crawler never looks here
+# Verification is not instant — allow at least 24 hours after publishing, and
+# check AdMob ▸ Apps ▸ App settings for the app-ads.txt status.
+#
+# THE LINE BELOW:
+#   google.com          the ad system (AdMob and AdSense both sell via this)
+#   pub-6498975196063309  our AdMob publisher id — covers the Jbox Games iOS
+#                       and Android apps
+#   DIRECT              we control the account directly; no reseller
+#   f08c47fec0942fa0    Google's TAG certification-authority id. This is the
+#                       same value for every Google publisher — it is not a
+#                       secret and not specific to this account.
+#
+# Add one line per additional ad network if mediation is ever introduced.
+google.com, pub-6498975196063309, DIRECT, f08c47fec0942fa0
